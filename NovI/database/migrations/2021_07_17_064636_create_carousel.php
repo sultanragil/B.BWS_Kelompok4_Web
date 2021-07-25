@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCreator extends Migration
+class CreateCarousel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateCreator extends Migration
      */
     public function up()
     {
-        Schema::create('creator', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('creator_name');
-            $table->string('creator_email');
-            $table->string('creator_password');
-            $table->string('creator_profile');
-            $table->text('creator_desc');
+        Schema::create('carousel', function (Blueprint $table) {
+            $table->id();
+            $table->string('image');
+            $table->string('title');
+            $table->string('text');
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateCreator extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('creator');
+        Schema::dropIfExists('carousel');
     }
 }
